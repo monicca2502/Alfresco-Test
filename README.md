@@ -9,10 +9,12 @@ To run the automation test follow these steps:
     Open Project folder
 
     Open Terminal of VS Code
+    
+    Update Selenium Webdriver by command "webdriver-manager update"
 
     Start Selenium Webdriver by command “webdriver-manager start”
 
-    Open new terminal window without closing this terminal
+    Open new terminal window without closing this Selenium Webdriver terminal
 
     Enter command as “protractor conf.js”
 
@@ -35,5 +37,7 @@ iii. Prerequisites List here what/if anything needs to be installed
     Node JS from website : https://nodejs.org/en/download/
 
     Protractor by “npm install -g protractor”
+    
+    Update Selenium Webdriver by command “webdriver-manager update”
 
     Selenium Webdriver start by “webdriver-manager start”
