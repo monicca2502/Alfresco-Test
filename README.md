@@ -36,4 +36,4 @@ iii. Prerequisites List here what/if anything needs to be installed
 
     Protractor by “npm install -g protractor”
 
-    Selenium Webdriver Update Version by “webdriver-manager update”
+    Selenium Webdriver start by “webdriver-manager start”
