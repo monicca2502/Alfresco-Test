@@ -12,7 +12,9 @@ var Homepage = function() {
   var deleteoption = element(by.css('#cdk-overlay-1 button:nth-child(5)'));
   var Newfolderdialogbox = element(by.css('mat-dialog-title-1'));
   var FolderNameList = element(by.css('.adf-expand-cell-5.ng-star-inserted'));
-  
+  var validationmsg = element(by.css('#cdk-overlay-4 > snack-bar-container > simple-snack-bar > span'));
+  var vmsg = element(by.xpath("//div[3]/div[3]/div/snack-bar-container"));
+
     this.clickContenservices = async function() {
       await contentservices.click();
     };
@@ -63,14 +65,28 @@ var Homepage = function() {
     };
 
     this.duplicatefoldercreation = async function(foldername) {
+      browser.ignoreSynchronization = true;
       await createfoldericon.click();
       await nametextbox.clear();
       await nametextbox.sendKeys(foldername);
-      await createbtn.click();
+      await createbtn.click();      
     };
 
+    this.validationmsgdisplayed = async function(){
+      await vmsg;
+      var msg = vmsg.getText();
+      return msg;
+    }
     this.newfolderdialogboxPresent = async function(){
       return Newfolderdialogbox.isDisplayed();
+    };
+
+    this.notification = async function(){
+      browser.sleep(500);
+      browser.ignoreSynchronization = true;
+      return(page.notification);
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
     };
 
     this.deletefolder = async function(){

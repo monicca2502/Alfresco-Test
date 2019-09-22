@@ -35,9 +35,11 @@ describe('Duplicate Folder Validation',function(){
     await loginpage.setPassword("Password");
     await loginpage.ClickSignIn();
     homepage.createfolder("Alfresco");
-        homepage.duplicatefoldercreation("Alfresco");
-        browser.sleep(1000);
-        expect(homepage.newfolderdialogboxPresent()).toBe(true);
-        homepage.deletefolder();
+    homepage.duplicatefoldercreation("Alfresco");
+    browser.sleep(1000);
+    const expmsg = "There's already a folder with this name. Try a different name.";
+    var amsg = homepage.validationmsgdisplayed();
+    expect(amsg).toEqual(expmsg);        
+    homepage.deletefolder();
   });
 });
